@@ -21,8 +21,8 @@
   }
 
   .back-arrow {
-    margin-top: 50px;
-    margin-left: 15px;
+    top: 50px;
+    left: 15px;
   }
 
   .main-content {
@@ -112,8 +112,8 @@
   }
 
   .back-arrow {
-    margin-top: 30px;
-    margin-left: 30px;
+    top: 30px;
+    left: 30px;
   }
 
   .calendar-container {
