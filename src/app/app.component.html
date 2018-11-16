@@ -1,6 +1,6 @@
 <header class="page-header">
+  <button class="back-arrow"></button>
   <div class="logo">
-    <button class="back-arrow"></button>
     <h1>Ciel de Paris</h1>
     <h2>{{"Table for " + guestForm.get('guest').value + ", Today @ "+ activeSlot}}</h2>
   </div>
@@ -10,7 +10,7 @@
     <div class="calendar-container">
       <div class="reservation-date-container">
         <label for="reservation-date" class="reservation-date">Today</label>
-        <select id="reservation-date" class="select-arrow">
+        <select id="reservation-date" class="select-arrow reservation-date-select">
           <option selected></option>
         </select>
       </div>
@@ -32,7 +32,7 @@
     <div class="guest-container">
       <form [formGroup]="guestForm" class="guest-form">
         <label for="guest" class="guest-group">Table for</label>
-        <select id="guest" formControlName="guest" class="select-arrow">
+        <select id="guest" formControlName="guest" class="select-arrow guest-select">
           <option *ngFor="let guest of guests" [value]="guest.value">
             {{guest.viewValue}}
           </option>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="slots-container">
-      <span class="dinner">DINNER</span>
+      <span class="dinner">dinner</span>
       <div class="slots-content">
         <div class="slot-rect" *ngFor="let slot of actualSlots" [ngClass]="{'selected-slot-rect': isSelectedSlot(slot)}">
           <span [ngClass]="isSelectedSlot(slot) ? 'selected-slot-text' : 'simple-slot-text'">{{slot}}</span>

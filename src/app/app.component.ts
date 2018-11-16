@@ -24,7 +24,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
   actualSlots: Array<string> = [];
 
-  activeSlot: '';
+  activeSlot = "";
+
+  static readonly WEEK_COUNT = 5;
+  static readonly DAY_COUNT = 7;
+
+  static readonly SELECTED_CALENDAR_DAY = 6;
+  static readonly START_CALENDAR_DAY = 27;
+  static readonly MONTH_LAST_DAY = 31;
 
   private unsubscribe$ = new Subject();
 
@@ -55,12 +62,12 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   initCalendar() {
-    let currentDay = 27;
-    for (let i = 0; i < 5; i++) {
+    let currentDay = AppComponent.START_CALENDAR_DAY;
+    for (let i = 0; i < AppComponent.WEEK_COUNT; i++) {
       let week = [];
-      for (let j = 0; j < 7; j++) {
+      for (let j = 0; j < AppComponent.DAY_COUNT; j++) {
         week.push(currentDay);
-        if (currentDay == 31) {
+        if (currentDay === AppComponent.MONTH_LAST_DAY) {
           currentDay = 0;
         }
         currentDay++;
@@ -80,20 +87,20 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   isSelectedDay(day: number) : boolean {
-    return day == 6;
+    return day === AppComponent.SELECTED_CALENDAR_DAY;
   }
 
   isLastMonthDay(day: number, week: Array<number>) : boolean {
-    let isFoundWeekDay = week.find(weekDay => weekDay == 31);
-    return day >= 27 && isFoundWeekDay != undefined;
+    const isFoundWeekDay = week.find(weekDay => weekDay == AppComponent.MONTH_LAST_DAY);
+    return day >= AppComponent.START_CALENDAR_DAY && isFoundWeekDay !== undefined;
   }
 
-  selectSlot(slot) {
-    this.activeSlot = this.activeSlot == slot ? '' : slot;
+  selectSlot(slot: string) {
+    this.activeSlot = this.activeSlot === slot ? "" : slot;
   }
 
   isSelectedSlot(slot: string) : boolean {
-    return slot == this.activeSlot;
+    return slot === this.activeSlot;
   }
 }
 

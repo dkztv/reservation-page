@@ -1,10 +1,10 @@
 export class ReservationConverter {
-  static getDateArray(arr) : Array<string> {
-    if (!arr || arr.length == 0) {
-      return []
-    }
-    return arr
-      .filter(arrElem => !arrElem.time.includes("-"))
-      .map(arrElem => arrElem.time.substr(0, arrElem.time.length - 3).toString());
+  static readonly SECONDS_SIZE = 3;
+
+  static getDateArray(arr = null) : Array<string> {
+    const convertingArray = (arr.length && arr ) || [];
+    return convertingArray
+      .filter(arrElem => arrElem.time && !arrElem.time.includes("-"))
+      .map(arrElem => arrElem.time.substr(0, arrElem.time.length - ReservationConverter.SECONDS_SIZE).toString());
   }
 }
