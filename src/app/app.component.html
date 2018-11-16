@@ -1,20 +1,58 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<header class="page-header">
+  <div class="logo">
+    <button class="back-arrow"></button>
+    <h1>Ciel de Paris</h1>
+    <h2>{{"Table for " + guestForm.get('guest').value + ", Today @ "+ activeSlot}}</h2>
+  </div>
+</header>
+<main>
+  <section class="main-content">
+    <div class="calendar-container">
+      <div class="reservation-date-container">
+        <label for="reservation-date" class="reservation-date">Today</label>
+        <select id="reservation-date" class="select-arrow">
+          <option selected></option>
+        </select>
+      </div>
+
+      <div class="month-selector">
+        <button class="left-calendar-arrow"></button>
+        <span class="month-title">April 2017</span>
+        <button class="right-calendar-arrow"></button>
+      </div>
+      <div class="week-days-container">
+        <div class="week-day" *ngFor="let weekDay of displayedWeekDays">{{weekDay}}</div>
+      </div>
+      <div class="week" *ngFor="let week of month">
+        <div class="day" *ngFor="let day of week"
+             [ngClass]="{'selected-day': isSelectedDay(day), 'last-month-day': isLastMonthDay(day, week)}">{{day}}</div>
+      </div>
+    </div>
+
+    <div class="guest-container">
+      <form [formGroup]="guestForm" class="guest-form">
+        <label for="guest" class="guest-group">Table for</label>
+        <select id="guest" formControlName="guest" class="select-arrow">
+          <option *ngFor="let guest of guests" [value]="guest.value">
+            {{guest.viewValue}}
+          </option>
+        </select>
+      </form>
+    </div>
+
+    <div class="slots-container">
+      <span class="dinner">DINNER</span>
+      <div class="slots-content">
+        <div class="slot-rect" *ngFor="let slot of actualSlots" [ngClass]="{'selected-slot-rect': isSelectedSlot(slot)}">
+          <span [ngClass]="isSelectedSlot(slot) ? 'selected-slot-text' : 'simple-slot-text'">{{slot}}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="update-container">
+    <button class="update-button">UPDATE</button>
+    <div class="indicator-rect"></div>
+  </div>
+</main>
 

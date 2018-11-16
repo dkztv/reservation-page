@@ -1,0 +1,388 @@
+@media (max-width: 910px) {
+  header.page-header {
+    height: 170px;
+  }
+
+  .page-header h1 {
+    font-size: 32px;
+    height: 36px;
+    line-height: 36px;
+    letter-spacing: -0.2px;
+    margin: 13px auto 0 18px;
+  }
+
+  .page-header h2 {
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    letter-spacing: -0.1px;
+    margin: 7px auto 0 20px;
+  }
+
+  .back-arrow {
+    margin-top: 50px;
+    margin-left: 15px;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .guest-container {
+    order: 1;
+    height: 60px;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .guest-form {
+    height: 30px;
+    line-height: 30px;
+    margin: 15px 20px;
+  }
+
+  #guest {
+    width: calc(100% - 105px);
+  }
+
+  #reservation-date {
+    width: calc(100% - 85px);
+  }
+
+  .calendar-container {
+    order: 2;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .slots-container {
+    order: 3;
+    margin: 20px;
+  }
+
+  .month-selector, .week-days-container, .week {
+    display: none;
+  }
+
+  .update-container {
+    display: block;
+    height: 94px;
+    background-color: #fafafa;
+  }
+
+  .update-button {
+    width: 100%;
+  }
+
+  .indicator-rect {
+    width: 134px;
+    height: 5px;
+    margin: 20px auto 9px auto;
+    opacity: 0.5;
+    border-radius: 100px;
+    background-color: #000000;
+  }
+}
+
+@media (min-width: 911px) {
+  header.page-header {
+    height: 200px;
+  }
+
+  .main-content {
+    flex-flow: column wrap;
+    height: 700px;
+    padding: 50px 7%;
+  }
+
+  .page-header h1 {
+    font-size: 36px;
+    height: 49px;
+    letter-spacing: -0.2px;
+    margin: 31px auto 0 28px;
+  }
+
+  .page-header h2 {
+    font-size: 16px;
+    height: 20px;
+    line-height: 20px;
+    margin: 6px auto 0 30px;
+  }
+
+  .back-arrow {
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  .calendar-container {
+    width: 305.2px;
+    flex: 1 0 100%;
+  }
+
+  .reservation-date-container {
+    display: none;
+  }
+
+  .month-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 25px;
+  }
+
+  .week-days-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 35px;
+    margin-bottom: 10px;
+  }
+
+  .week {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+  }
+
+  .guest-container {
+    height: 30px;
+    margin-left: 5%;
+  }
+
+  select {
+    width: 80px;
+  }
+
+  .slots-container {
+    margin-top: 30px;
+    margin-left: 5%;
+    width: calc(100% - 5% - 305.2px);
+  }
+
+  .update-button {
+    margin: auto 35px auto auto;
+    width: 320px;
+    border-radius: 30px;
+  }
+
+  .update-container {
+    display: flex;
+    height: 130px;
+    background-color: #ffffff;
+  }
+
+  .indicator-rect {
+    display: none;
+  }
+}
+
+/* Header */
+header.page-header {
+  border-radius: 20px;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.05);
+  background-image: linear-gradient(to bottom, rgba(61, 60, 59, 0.1), rgba(61, 60, 59, 0.5) 54%, rgba(61, 60, 59, 0.8));
+}
+
+.logo {
+  height: inherit;
+  position: relative;
+  background-image: url(../assets/restic.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.logo:after {
+  opacity: 0.75;
+}
+
+.back-arrow {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: url("../assets/back-white.svg") no-repeat center;
+}
+
+.page-header h1 {
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.page-header h2 {
+  opacity: 0.8;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+/* Main */
+
+.main-content {
+  display: flex;
+  background-color: #fafafa;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.05);
+}
+
+.reservation-date {
+  vertical-align: bottom;
+  margin-right: 5px;
+  width: 24px;
+  height: 24px;
+  background: url("../assets/date.svg") no-repeat;
+  background-position-y: center;
+  padding-left: 35px;
+}
+
+.reservation-date-container {
+  height: 30px;
+  line-height: 30px;
+  margin: 15px 20px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #333333;
+}
+
+.left-calendar-arrow {
+  width: 12px;
+  height: 12px;
+  border: none;
+  transform: rotate(90deg);
+  background: url("../assets/drop.svg") no-repeat center;
+}
+
+.right-calendar-arrow {
+  width: 12px;
+  height: 12px;
+  border: none;
+  transform: rotate(-90deg);
+  background: url("../assets/drop.svg") no-repeat center;
+}
+
+.month-title {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.56;
+  letter-spacing: 0;
+  text-align: center;
+  color: #333333;
+}
+
+.week-day {
+  font-size: 13px;
+  text-align: center;
+  flex-basis: calc(100% / 7);
+  color: #999999;
+}
+
+.day {
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+  flex-basis: calc(100% / 7);
+  color: #444444;
+}
+
+.selected-day {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 80px;
+  color: #ffffff;
+  background-color: #e16640;
+}
+
+.last-month-day {
+  opacity: 0.25;
+}
+
+.guest-container {
+  font-size: 16px;
+  font-weight: 300;
+  color: #333333;
+}
+
+.select-arrow {
+  background: url('../assets/drop.svg') no-repeat center right;
+}
+
+.guest-group {
+  vertical-align: bottom;
+  margin-right: 5px;
+  width: 24px;
+  height: 24px;
+  background: url("../assets/group.svg") no-repeat;
+  background-position-y: center;
+  padding-left: 35px;
+}
+
+select {
+  border: none;
+  font-size: inherit;
+  background-color: inherit;
+  appearance: none;
+}
+
+.dinner {
+  width: 80px;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  color: #999999;
+}
+
+.slots-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.slot-rect {
+  width: 80px;
+  height: 40px;
+  border-radius: 70px;
+  line-height: 40px;
+  text-align: center;
+  margin: 0 5px 10px 0;
+  background-color: #ffffff;
+}
+
+.selected-slot-rect {
+  background-color: #e16640;
+}
+
+.simple-slot-text {
+  width: 80px;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: -0.1px;
+  text-align: center;
+  color: #666666;
+}
+
+.selected-slot-text {
+  width: 80px;
+  height: 20px;
+  font-size: 14px;
+  letter-spacing: -0.1px;
+  text-align: center;
+  color: #ffffff
+}
+
+.update-container {
+  width: 100%;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.05);
+}
+
+.update-button {
+  height: 60px;
+  border: none;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #ffffff;outline:0;
+  background-color: #e16640;
+}
