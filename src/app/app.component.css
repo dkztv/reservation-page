@@ -20,6 +20,12 @@
     margin: 7px 0 0 0;
   }
 
+  .main-container {
+    height: calc(100% - 170px);
+    display: flex;
+    flex-direction: column;
+  }
+
   .back-arrow {
     margin-top: 50px;
     margin-left: 15px;
@@ -27,6 +33,7 @@
 
   .main-content {
     flex-direction: column;
+    overflow: auto;
   }
 
   .guest-container {
@@ -56,6 +63,7 @@
 
   .slots-container {
     margin: 20px;
+    overflow: auto;
   }
 
   .month-selector, .week-days-container, .week {
@@ -63,6 +71,7 @@
   }
 
   .update-container {
+    flex-shrink: 1;
     display: block;
     height: 94px;
     background-color: #fafafa;
