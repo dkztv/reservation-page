@@ -380,6 +380,7 @@ select {
   font-weight: 300;
   letter-spacing: -0.1px;
   text-align: center;
+  cursor: default;
   color: #666;
 }
 
@@ -389,6 +390,7 @@ select {
   font-size: 14px;
   letter-spacing: -0.1px;
   text-align: center;
+  cursor: default;
   color: #fff
 }
 
