@@ -170,6 +170,7 @@
 
   .slots-content {
     min-height: 246px;
+    max-height: 340px;
   }
 
   .update-button {
@@ -355,7 +356,6 @@ select {
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
-  max-height: 340px;
   overflow: auto;
 }
 
