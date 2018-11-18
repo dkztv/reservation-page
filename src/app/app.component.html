@@ -46,7 +46,7 @@
         <div class="slots-content">
           <div class="slot-rect" *ngFor="let slot of actualSlots"
                [ngClass]="{'selected-slot-rect': isSelectedSlot(slot)}">
-            <span [ngClass]="isSelectedSlot(slot) ? 'selected-slot-text' : 'simple-slot-text'">{{slot}}</span>
+            <span [ngClass]="isSelectedSlot(slot) ? 'selected-slot-text' : 'simple-slot-text'" (click)="selectSlot(slot)">{{slot}}</span>
           </div>
         </div>
       </div>

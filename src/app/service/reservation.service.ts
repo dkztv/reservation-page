@@ -14,7 +14,7 @@ export class ReservationService {
   getActualSlots(count: number = 2) : Observable<Array<string>> {
     const URL = `https://hostme-services-qa.azurewebsites.net/api/core/mb/restaurants/4530/availability?date=2018-11-25T12:00:00%2B03:00&partySize=${count}&rangeInMinutes=720`;
     return this.http.get(URL).pipe(
-       map(responseObject => ReservationConverter.getDateArray(responseObject))
-     );
+      map(responseObject => ReservationConverter.getDateArray(responseObject))
+    );
   }
 }
