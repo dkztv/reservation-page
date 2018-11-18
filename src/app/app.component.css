@@ -30,7 +30,6 @@
   }
 
   .guest-container {
-    order: 1;
     height: 60px;
     border-bottom: 1px solid #eee;
   }
@@ -50,14 +49,12 @@
   }
 
   .calendar-container {
-    order: 2;
     width: 100%;
     height: 60px;
     border-bottom: 1px solid #eee;
   }
 
   .slots-container {
-    order: 3;
     margin: 20px;
   }
 
@@ -106,8 +103,6 @@
   }
 
   .main-content {
-    flex-flow: column wrap;
-    height: 700px;
     padding: 50px 7%;
   }
 
@@ -117,8 +112,7 @@
   }
 
   .calendar-container {
-    width: 305.2px;
-    flex: 1 0 100%;
+    flex: 1 0 305.2px;
   }
 
   .reservation-date-container {
@@ -162,7 +156,10 @@
   .slots-container {
     margin-top: 30px;
     margin-left: 5%;
-    width: calc(100% - 5% - 305.2px);
+  }
+
+  .slots-content {
+    min-height: 246px;
   }
 
   .update-button {
@@ -300,6 +297,11 @@
   opacity: 0.25;
 }
 
+.select-table-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .guest-container {
   font-size: 16px;
   font-weight: 300;
@@ -340,7 +342,11 @@ select {
 .slots-content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 10px;
+  max-height: 340px;
+  overflow: auto;
 }
 
 .slot-rect {
@@ -385,6 +391,7 @@ select {
   height: 60px;
   border: none;
   font-size: 16px;
+  text-transform: uppercase;
   letter-spacing: 0.2px;
   text-align: center;
   color: #fff;outline:0;
