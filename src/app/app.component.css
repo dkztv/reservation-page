@@ -63,7 +63,6 @@
 
   .slots-container {
     margin: 20px;
-    overflow: auto;
   }
 
   .month-selector, .week-days-container, .week {
